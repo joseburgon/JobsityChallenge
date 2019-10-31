@@ -9,7 +9,7 @@
 
 ## Ideaware Blog (PHP Take home test) | By José Luis Burgón
 
-User Test:
+User Test:<br>
 Email: user.test.12@mail.com
 Password: 123456
 

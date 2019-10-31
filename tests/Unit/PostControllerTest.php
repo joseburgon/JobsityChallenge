@@ -53,6 +53,7 @@ class PostControllerTest extends TestCase
         $response = $this->actingAS(User::find(30))->post('posts', $data);
         $post = Post::orderBy('id', 'DESC')->first();
         $response->assertRedirect("/posts/{$post->id}/edit");
+        $response->assertSessionHas("info", 'Post created!');
     }
 
     /** @test */

@@ -24,6 +24,16 @@ class PostStoreRequest extends FormRequest
      */
     public function rules()
     {
+/*         $rules = [
+            'name' => '',
+            'slug' => '',
+            'user_id' => 'required',
+            'category_id' => '',
+            'tags' => '',
+            'body' => '',
+            'status' => '',
+        ]; */
+        
         $rules = [
             'name' => 'required',
             'slug' => 'required|unique:posts,slug',

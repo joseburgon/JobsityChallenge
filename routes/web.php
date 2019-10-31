@@ -11,12 +11,6 @@
 |
 */
 
-/* 
-Route::get('/', function () {
-    return view('welcome');
-});
- */
-
 Route::redirect('/', 'blog');
 
 Auth::routes();

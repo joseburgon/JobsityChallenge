@@ -13,8 +13,6 @@ class PageController extends Controller
 {
     public function blog() {
         $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
-        // $author = User::where('id', $pos)
-        // $post->fill(['author' => $author]);
 
         return view('web.posts', compact('posts'));
     }

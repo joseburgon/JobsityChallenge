@@ -37,7 +37,6 @@ class PostControllerTest extends TestCase
     function it_stores_a_valid_post()
     {
         $this->withoutExceptionHandling();
-        //$user = factory(User::class)->make();
         $attributes = factory(Post::class)->make();
 
         $data = [

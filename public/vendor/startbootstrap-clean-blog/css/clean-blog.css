@@ -194,6 +194,11 @@ header.masthead .site-heading {
   color: white;
 }
 
+header.masthead .user-heading {
+  padding: 50px 0;
+  color: white;
+}
+
 @media only screen and (min-width: 768px) {
   header.masthead .page-heading,
   header.masthead .post-heading,
@@ -234,27 +239,35 @@ header.masthead .post-heading h1 {
   font-size: 35px;
 }
 
+header.masthead .user-heading h1 {
+  font-size: 28px;
+}
+
 header.masthead .post-heading .meta,
-header.masthead .post-heading .subheading {
+header.masthead .post-heading .subheading,
+header.masthead .user-heading .subheading {
   line-height: 1.1;
   display: block;
 }
 
-header.masthead .post-heading .subheading {
+header.masthead .post-heading .subheading,
+header.masthead .user-heading .subheading {
   font-size: 24px;
   font-weight: 600;
   margin: 10px 0 30px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-header.masthead .post-heading .meta {
+header.masthead .post-heading .meta,
+header.masthead .user-heading .meta {
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
   font-family: 'Lora', 'Times New Roman', serif;
 }
 
-header.masthead .post-heading .meta a {
+header.masthead .post-heading .meta a,
+header.masthead .user-heading .meta a {
   color: #fff;
 }
 
@@ -262,8 +275,14 @@ header.masthead .post-heading .meta a {
   header.masthead .post-heading h1 {
     font-size: 55px;
   }
+  header.masthead .user-heading h1 {
+    font-size: 40px;
+  }
   header.masthead .post-heading .subheading {
     font-size: 30px;
+  }
+  header.masthead .user-heading .subheading {
+    font-size: 20px;
   }
 }
 

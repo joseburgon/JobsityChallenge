@@ -15,7 +15,7 @@
     </div>
     </div>
 </header>
-    <!-- Main Content -->
+<!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -25,7 +25,10 @@
                 <h2 class="post-title">{{ $post->name }}</h2>
                 <h3 class="post-subtitle">{{ $post->excerpt }}</h3>
             </a>
-            <p class="post-meta">Posted by {{ $post->user->name }}
+            <p class="post-meta">Posted by 
+                <a href="{{ route('user', $post->user_id) }}">
+                    {{ $post->user->name }}
+                </a>
                 on {{ date('d-m-Y', strtotime($post->created_at)) }}</p>
             </div>
             <hr>

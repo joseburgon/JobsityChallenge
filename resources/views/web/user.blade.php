@@ -42,22 +42,28 @@
           </div>                          
       </div>
       <div class="col-lg-4 col-md-6 mx-auto">
-        <blockquote class="twitter-tweet" data-theme="dark">
-          <p lang="en" dir="ltr">
-          🚨 Vapor: we have launched support for pointing multiple domains at a single project!
-          <a href="https://t.co/sPF0ahrEvt">https://t.co/sPF0ahrEvt</a>
-          </p>&mdash; Laravel (@laravelphp)
-          <a href="https://twitter.com/laravelphp/status/1215652030255190016?ref_src=twsrc%5Etfw">January 10, 2020</a>
+        @foreach ($tweets as $tweet)
+        <blockquote
+          class="twitter-tweet"
+          data-conversation="none" data-cards="hidden"
+          data-lang="en">
+          <p lang="en" dir="ltr">{{ $tweet->text }}</p>
+          &mdash; {{ $tweet->user->name }} ({{ '@'.$tweet->user->screen_name }})
+          <a href="{{'https://twitter.com/'.$tweet->user->screen_name.'/status/'.$tweet->id_str}}">
+            {{ date('d-m-Y', strtotime($tweet->created_at)) }}</a>
         </blockquote>
 
-        <blockquote class="twitter-tweet" data-theme="dark">
-          <p lang="en" dir="ltr">
-          🚨 Vapor: we have launched support for pointing multiple domains at a single project!
-          <a href="https://t.co/sPF0ahrEvt">https://t.co/sPF0ahrEvt</a>
-          </p>&mdash; Laravel (@laravelphp)
-          <a href="https://twitter.com/laravelphp/status/1215652030255190016?ref_src=twsrc%5Etfw">January 10, 2020</a>
-        </blockquote>
-        
+        {{-- <blockquote class="twitter-tweet">
+          <img 
+            src="{{ $tweet->user->profile_image_url }}"
+            class="image-circle" width="50" height="50"
+            alt="Profile Picture"
+          >
+            <p lang="en" dir="ltr">{{ $tweet->text }}
+              </p>&mdash; {{ $tweet->user->name }} ({{ '@'.$tweet->user->screen_name }})
+            <span>{{ date('d-m-Y', strtotime($tweet->created_at)) }}</span>
+        </blockquote> --}}
+        @endforeach
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
         </script>
       </div>

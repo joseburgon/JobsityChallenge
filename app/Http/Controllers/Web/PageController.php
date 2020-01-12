@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+//use Thujohn\Twitter\Twitter;
+use Twitter;
 
 use App\Post;
 use App\Category;
 use App\User;
+
 
 class PageController extends Controller
 {
@@ -51,6 +54,9 @@ class PageController extends Controller
             ->where('status', 'PUBLISHED')
             ->where('user_id', $user->id)->paginate(3);
 
-        return view('web.user', compact('user', 'posts'));
+        $tweets = Twitter::getUserTimeline(['screen_name' => $user->twitter_username,
+            'count' => 5]);
+
+        return view('web.user', compact('user', 'posts', 'tweets'));
     }
 }

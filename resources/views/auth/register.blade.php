@@ -43,7 +43,7 @@
                             <label for="twitter_username" class="col-md-4 col-form-label text-md-right">{{ __('Twitter Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="twitter_username" type="text" class="form-control @error('twitter_username') is-invalid @enderror" name="twitter_username" value="{{ old('twitter_username') }}" required autocomplete="twitter_username">
+                                <input id="twitter_username" type="text" class="form-control @error('twitter_username') is-invalid @enderror" name="twitter_username" value="{{ old('twitter_username') }}" autocomplete="twitter_username">
 
                                 @error('twitter_username')
                                     <span class="invalid-feedback" role="alert">

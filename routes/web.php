@@ -31,4 +31,3 @@ Route::put('tweets/update/{tweet}', 'Admin\TweetController@update')->name('tweet
 Route::resource('tags', 'Admin\TagController');
 Route::resource('categories', 'Admin\CategoryController');
 Route::resource('posts', 'Admin\PostController');
-//Route::resource('tweets', 'Admin\TweetController');

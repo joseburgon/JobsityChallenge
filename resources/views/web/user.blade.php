@@ -53,7 +53,7 @@
               alt="Profile Picture"
             />
             <p lang="en" dir="ltr">{{ $tweet->text }}</p>            
-            <span>&mdash; {{ $tweet->name }} ({{ '@'.$tweet->screen_name }}) {{ date('d-m-Y', strtotime($tweet->created_at)) }}</span>
+            <span>&mdash; {{ $tweet->name }} ({{ '@'.$tweet->screen_name }}) {{ date('d-m-Y H:i:s', strtotime($tweet->created_at)) }}</span>
             @if ($user->authUser)
             <button
               type="button" class="btn btn-outline-dark btn-sm" data-id_str="{{ $tweet->id_str }}"

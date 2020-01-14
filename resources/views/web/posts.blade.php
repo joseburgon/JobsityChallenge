@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-            <h1>Ideaware Blog</h1>
+            <h1>Blog Challenge</h1>
             <span class="subheading">A Laravel 6 Blog</span>
         </div>
         </div>

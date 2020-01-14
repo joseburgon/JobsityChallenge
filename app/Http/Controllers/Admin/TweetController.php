@@ -25,11 +25,17 @@ class TweetController extends Controller
         // Something
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
     public function update(TweetUpdateRequest $request, $id_str)
     {
         $tweet = Tweet::where('id_str', $id_str)->first();
-        //$this->authorize('pass', $tweet);
-        //$tweet->fill($request->all())->save();
         $tweet->fill(['hidden' => $request->hidden, 'class' => $request->class])->save();
 
         return response()->json(['success'=>'Tweet updated']);
@@ -39,7 +45,7 @@ class TweetController extends Controller
     {
         $tweet = Tweet::create($request->all());
 
-        return response()->json(['success'=>'Tweet is hidden now']);
+        return response()->json(['success'=>'Tweet stored']);
     }
 
     public function loadTweets($user, $twitter_username)

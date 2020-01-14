@@ -52,5 +52,6 @@ blockquote.twitter-tweet a:focus {
 }
 
 blockquote.twitter-tweet .btn {
-  margin-left: 40px;
+  margin-left: 20px;
+  padding: 10px 10px;
 }

@@ -41,4 +41,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class)->withTimestamps();
     }
+
+    public function tweets() 
+    {
+        return $this->hasMany(Tweet::class)->withTimestamps();
+    }
+
+
 }

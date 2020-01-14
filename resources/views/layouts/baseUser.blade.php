@@ -24,7 +24,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="{{ asset('vendor/startbootstrap-clean-blog/css/clean-blog.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/startbootstrap-clean-blog/css/clean-blog.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/tweets-css/css/Tweet.css') }}" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -74,20 +75,6 @@
                 </div>
         </div>
     </nav>
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url({{ asset('vendor/startbootstrap-clean-blog/img/home-bg.jpg') }})">
-        <div class="overlay"></div>
-        <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-                <h1>Ideaware Blog</h1>
-                <span class="subheading">A Laravel 6 Blog</span>
-            </div>
-            </div>
-        </div>
-        </div>
-    </header>
     @if (session('info'))
         <div class="container mt-3">
             <div class="row">
@@ -114,10 +101,10 @@
                 </div>
             </div>
         </div>
-    @endif
-    <main class="py-4">
-        @yield('content')
-    </main>
+    @endif    
+    
+    @yield('content')
+
     <hr>
     <!-- Footer -->
     <footer>
@@ -150,7 +137,7 @@
                   </a>
                 </li>
               </ul>
-              <p class="copyright text-muted">Copyright &copy; Ideaware Blog 2019</p>
+              <p class="copyright text-muted">Copyright &copy; Laravel Blog 2019</p>
             </div>
           </div>
         </div>
@@ -162,6 +149,44 @@
     
       <!-- Custom scripts for this template -->
       <script src="{{ asset('vendor/startbootstrap-clean-blog/js/clean-blog.min.js') }}"></script>
+      
+      
+      <script>
+        jQuery(document).ready(function(){
+          jQuery('.btn').click(function(e){
+            e.preventDefault();
+            var tweet = $(this).data('id_str');
+            //var url = "url('/tweets/update/" + tweet + "/')";
+            //console.log(url);
+            if ($(this).data('hidden') == 0) {
+              $(this).data('hidden', 1);
+              $(this).html('SHOW');
+              $('#' + tweet).addClass('hidden');
+            } else {
+              $(this).data('hidden', 0);
+              $(this).html('HIDE');
+              $('#' + tweet).removeClass('hidden');
+            }
+            $.ajaxSetup({
+                headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            jQuery.ajax({
+                url: '/tweets/update/' + tweet,
+                method: 'put',
+                data: {
+                  id_str: tweet,
+                  hidden: $(this).data('hidden'),
+                  class: $('#' + tweet).attr('class'),
+                  _token: $('meta[name="csrf-token"]').attr('content'),
+                },
+                success: function(result){
+                  console.log(result);
+            }});
+          });
+        });
+      </script>
     
 </body>
 </html>

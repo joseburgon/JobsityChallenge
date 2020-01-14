@@ -38,6 +38,20 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <label for="twitter_username" class="col-md-4 col-form-label text-md-right">{{ __('Twitter Username') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="twitter_username" type="text" class="form-control @error('twitter_username') is-invalid @enderror" name="twitter_username" value="{{ old('twitter_username') }}" required autocomplete="twitter_username">
+
+                                @error('twitter_username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

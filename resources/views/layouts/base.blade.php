@@ -136,7 +136,7 @@
                   </a>
                 </li>
               </ul>
-              <p class="copyright text-muted">Copyright &copy; Ideaware Blog 2019</p>
+              <p class="copyright text-muted">Copyright &copy; Laravel Blog 2019</p>
             </div>
           </div>
         </div>

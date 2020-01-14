@@ -8,7 +8,9 @@ class Tweet extends Model
 {
     //
     protected $fillable = [
-        'user_id', 'link', 'status'
+        'id_str', 'internal_user_id', 'profile_image_url',
+        'text', 'user_name', 'screen_name', 'hidden', 'class',
+        'created_at'
     ];
 
     public function user()

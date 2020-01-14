@@ -15,8 +15,12 @@
           <div class="post-heading">
             <h1>{{ $post->name }}</h1>
             <h2 class="subheading">{{ $post->excerpt }}</h2>
-            <span class="meta">Posted by  {{ $post->user->name }}              
-              on {{ date('d-m-Y', strtotime($post->created_at)) }}</span>
+            <span class="meta">
+              <a href="{{ route('user', $post->user_id) }}">
+                {{ $post->user->name }}
+              </a>
+              on {{ date('d-m-Y', strtotime($post->created_at)) }}
+            </span>
           </div>
         </div>
       </div>

@@ -50,6 +50,7 @@ I already created the migrations with the test data.
 ```
 d:\...\> php artisan migrate --seed
 ```
+> It is possible that the Faker image provider is down. I switched to another provider in my local env.
 
 # Ready to go!
 
@@ -58,4 +59,3 @@ d:\...\> php artisan migrate --seed
 *Email: user.test.12@mail.com
 Password: 123456*
 
-> It is possible that the Faker image provider is down. I switched to another provider in my local env.

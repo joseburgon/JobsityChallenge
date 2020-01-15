@@ -40,7 +40,7 @@ class PostControllerTest extends TestCase
         $attributes = factory(Post::class)->make();
 
         $data = [
-            'user_id' => 30,
+            'user_id' => 1,
             'category_id' => $attributes->category_id,
             'name' => $attributes->name,
             'slug' => $attributes->slug,
@@ -50,7 +50,7 @@ class PostControllerTest extends TestCase
             'tags' => [rand(1, 20), rand(1, 20)]
         ];
 
-        $response = $this->actingAS(User::find(30))->post('posts', $data);
+        $response = $this->actingAS(User::find(1))->post('posts', $data);
         $post = Post::orderBy('id', 'DESC')->first();
         $response->assertRedirect("/posts/{$post->id}/edit");
         $response->assertSessionHas("info", 'Post created!');
@@ -60,8 +60,8 @@ class PostControllerTest extends TestCase
     function it_displays_the_show_page()
     {
         $this->withoutExceptionHandling();
-        $post = Post::where('user_id', 30)->first();
-        $response = $this->actingAS(User::find(30))->get("/posts/{$post->id}");
+        $post = Post::where('user_id', 1)->first();
+        $response = $this->actingAS(User::find(1))->get("/posts/{$post->id}");
         $response->assertStatus(200);
     }
 
@@ -69,8 +69,8 @@ class PostControllerTest extends TestCase
     function it_displays_the_edit_page()
     {
         $this->withoutExceptionHandling();
-        $post = Post::where('user_id', 30)->first();
-        $response = $this->actingAS(User::find(30))->get("/posts/{$post->id}/edit");
+        $post = Post::where('user_id', 1)->first();
+        $response = $this->actingAS(User::find(1))->get("/posts/{$post->id}/edit");
         $response->assertStatus(200);
     }
 
@@ -78,11 +78,11 @@ class PostControllerTest extends TestCase
     function it_updates_valid_post()
     {
         $this->withoutExceptionHandling();
-        $post = Post::where('user_id', 30)->orderBy('id', 'DESC')->first();
+        $post = Post::where('user_id', 1)->orderBy('id', 'DESC')->first();
         $attributes = factory(Post::class)->make();
 
         $data = [
-            'user_id' => 30,
+            'user_id' => 1,
             'category_id' => $attributes->category_id,
             'name' => $attributes->name,
             'slug' => $attributes->slug,
@@ -92,7 +92,7 @@ class PostControllerTest extends TestCase
             'tags' => [rand(1, 20), rand(1, 20)]
         ];
 
-        $response = $this->actingAS(User::find(30))->put("/posts/{$post->id}", $data);
+        $response = $this->actingAS(User::find(1))->put("/posts/{$post->id}", $data);
         $response->assertRedirect("/posts/{$post->id}/edit");
         $response->assertSessionHas("info");        
     }
@@ -102,8 +102,8 @@ class PostControllerTest extends TestCase
     {
         
         $this->withoutExceptionHandling();
-        $post = Post::where('user_id', 30)->orderBy('id', 'DESC')->first();
-        $response = $this->actingAS(User::find(30))->delete("/posts/{$post->id}");
+        $post = Post::where('user_id', 1)->orderBy('id', 'DESC')->first();
+        $response = $this->actingAS(User::find(1))->delete("/posts/{$post->id}");
         $response->assertRedirect('/');
         $response->assertSessionHas("info", 'Post Deleted!'); 
     }

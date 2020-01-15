@@ -9,7 +9,7 @@
 
 ## PHP - Jobsity Challenge | by José Burgón
 **Mandatory tasks**: All completed.
-**Bonus tasks**: Unit Test.
+**Bonus tasks**: Unit Tests.
 
 ## Step 1: Clone repository
 

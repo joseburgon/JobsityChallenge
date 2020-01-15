@@ -8,8 +8,8 @@
 </p>
 
 ## PHP - Jobsity Challenge | by José Burgón
-Mandatory tasks: All completed.
-Bonus tasks: Unit Test.
+**Mandatory tasks**: All completed.
+**Bonus tasks**: Unit Test.
 
 ## Step 1: Clone repository
 
@@ -53,7 +53,7 @@ d:\...\> php artisan migrate --seed
 
 # Ready to go!
 
-*User test:*
+***User test***
 
 *Email: user.test.12@mail.com
 Password: 123456*

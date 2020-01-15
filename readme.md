@@ -7,24 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Blog (PHP - Jobsity Challenge) | By José Luis Burgón
+## PHP - Jobsity Challenge | by José Burgón
+Mandatory tasks: All completed.
+Bonus tasks: Unit Test.
 
-User Test:<br>
-Email: user.test.12@mail.com
-Password: 123456
+## Step 1: Clone repository
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+I strongly recommend using [Laragon](https://laragon.org/) as development environment.
+```
+d:\laragon\www> git clone https://github.com/joseburgon/JobsityChallenge.git
+```
+## Step 2: Load project packages and dependencies
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```
+d:\...\> composer install
+```
+```
+d:\...\> npm install
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Step 3: Create .env file
+The .env file is generally not loaded, due to security issues. The easiest way to do this is to copy the .env.example file to .env, and modify the latter:
+```
+d:\...\> copy .env.example .env
+```
+I'll share the Twitter apikey and other parameters via email.
 
-## License
+## Step 4: Create database 
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Laravel is configured to use mySQL by default, not only the driver, server, database, user and password must be changed, but also the port, mySQL uses 3306 and postgres 5432.
+
+## Step 5: Generate project key
+
+Laravel requires an encryption key for each project.
+```
+d:\...\> php artisan key:generate
+```
+
+## Step 6: Migrate and seed the database
+
+I already created the migrations with the test data.
+```
+d:\...\> php artisan migrate --seed
+```
+
+# Ready to go!
+
+*User test:*
+*Email: user.test.12@mail.com
+Password: 123456*
+
+> It is possible that the Faker image provider is down. I switched to another provider in my local env.

@@ -10,7 +10,7 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
         <div class="user-heading">
           <img src="{{ asset('vendor/startbootstrap-clean-blog/img/user-pic.png') }}"
             alt="Profile Picture" width="110" height="110">
@@ -45,28 +45,30 @@
         <h3 class="twitter">Latest Tweets <i class="fab fa-twitter"></i></h3>
         <hr>
         @foreach ($tweets as $tweet)
-        <a href="{{ 'https://twitter.com/'.$tweet->screen_name.'/status/'.$tweet->id_str }}" target='_blank'>
-          <blockquote class="{{ $tweet->class }}" id="{{ $tweet->id_str }}">
-            <img 
-              src="{{ $tweet->profile_image_url }}"
-              class="image-circle" width="36" height="36"
-              alt="Profile Picture"
-            />
-            <p lang="en" dir="ltr">{{ $tweet->text }}</p>            
+        <blockquote class="{{ $tweet->class }}" id="{{ $tweet->id_str }}">
+          <img 
+            src="{{ $tweet->profile_image_url }}"
+            class="image-circle" width="36" height="36"
+            alt="Profile Picture"
+          />
+          
+          <p lang="en" dir="ltr">{{ $tweet->text }}</p>
+          
+          <a href="{{ 'https://twitter.com/'.$tweet->screen_name.'/status/'.$tweet->id_str }}" target='_blank'>
             <span>&mdash; {{ $tweet->name }} ({{ '@'.$tweet->screen_name }}) {{ date('d-m-Y H:i:s', strtotime($tweet->created_at)) }}</span>
-            @if ($user->authUser)
-            <button
-              type="button" class="btn btn-outline-dark btn-sm" data-id_str="{{ $tweet->id_str }}"
-              data-user="{{ $user->id }}" data-hidden="{{ $tweet->hidden }}">
-              @if ($tweet->hidden === 1)
-              SHOW
-              @else
-              HIDE
-              @endif
-            </button>
+          </a>
+          @if ($user->authUser)
+          <button
+            type="button" class="btn btn-outline-dark btn-sm" data-id_str="{{ $tweet->id_str }}"
+            data-user="{{ $user->id }}" data-hidden="{{ $tweet->hidden }}">
+            @if ($tweet->hidden === 1)
+            SHOW
+            @else
+            HIDE
             @endif
+          </button>
+          @endif
           </blockquote>
-        </a>
         @endforeach
 
         {{-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" /> --}}

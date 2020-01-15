@@ -200,8 +200,8 @@ header.masthead .site-heading {
 }
 
 header.masthead .user-heading {
-    padding: 50px 0;
     color: white;
+    padding: 100px 0px 20px 0px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -437,51 +437,3 @@ footer .copyright {
     font-size: 16px;
     padding: 25px 35px;
 }
-
-/* blockquote.twitter-tweet {
-    display: inline-block;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    margin: 10px 5px;
-    padding: 0 16px 16px 16px;
-    max-width: 468px;
-}
-
-blockquote.hidden {
-    background-color: gray;
-}
-
-blockquote.hidden p {
-  color: #ddd;
-}
-
-blockquote.twitter-tweet p {
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    font-variant-ligatures: normal;
-    font-variant-caps: normal;
-    font-variant-numeric: normal;
-    font-variant-east-asian: normal;
-    font-weight: normal;
-    font-stretch: normal;
-    line-height: 1.4;
-    color: black;
-}
-
-blockquote.twitter-tweet a {
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
-    outline: 0 none;
-}
-
-blockquote.twitter-tweet a:hover,
-blockquote.twitter-tweet a:focus {
-    text-decoration: underline;
-} */

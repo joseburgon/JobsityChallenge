@@ -14,8 +14,7 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     @yield('scripts')
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('vendor/startbootstrap-clean-blog/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <script src="https://kit.fontawesome.com/33be4e2a6a.js" crossorigin="anonymous"></script>
@@ -146,18 +145,15 @@
       <!-- Bootstrap core JavaScript -->
       <script src="{{ asset('vendor/startbootstrap-clean-blog/vendor/jquery/jquery.min.js') }}"></script>
       <script src="{{ asset('vendor/startbootstrap-clean-blog/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    
+
       <!-- Custom scripts for this template -->
-      <script src="{{ asset('vendor/startbootstrap-clean-blog/js/clean-blog.min.js') }}"></script>
-      
+      <script src="{{ asset('vendor/startbootstrap-clean-blog/js/clean-blog.min.js') }}"></script>      
       
       <script>
         jQuery(document).ready(function(){
           jQuery('.btn').click(function(e){
             e.preventDefault();
             var tweet = $(this).data('id_str');
-            //var url = "url('/tweets/update/" + tweet + "/')";
-            //console.log(url);
             if ($(this).data('hidden') == 0) {
               $(this).data('hidden', 1);
               $(this).html('SHOW');

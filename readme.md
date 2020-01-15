@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Ideaware Blog (PHP Take home test) | By José Luis Burgón
+## Blog (PHP - Jobsity Challenge) | By José Luis Burgón
 
 User Test:<br>
 Email: user.test.12@mail.com

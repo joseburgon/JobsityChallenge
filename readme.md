@@ -13,7 +13,13 @@
 
 ## Step 1: Clone repository
 
-I strongly recommend using [Laragon](https://laragon.org/) as development environment.
+If it's Windows then I strongly recommend using [Laragon](https://laragon.org/) as a local development environment.
+> Laragon provides a fast and easy way to spin up an isolated Windows
+> development (like a Virtual Machine, it doesn’t touch your OS). Users
+> can install it as a software, start it up, do their programming, and
+> just exit when finished. The platform comes pre-installed with many
+> popular applications like Node.js, PHP, Apache, Composer, and
+> MariaDB/MySQL.
 ```
 d:\laragon\www> git clone https://github.com/joseburgon/JobsityChallenge.git
 ```

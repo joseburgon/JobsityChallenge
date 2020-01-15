@@ -13,7 +13,13 @@
 
 ## Step 1: Clone repository
 
-I strongly recommend using [Laragon](https://laragon.org/) as development environment.
+If it's Windows then I strongly recommend using [Laragon](https://laragon.org/) as a local development environment.
+> Laragon provides a fast and easy way to spin up an isolated Windows
+> development (like a Virtual Machine, it doesn’t touch your OS). Users
+> can install it as a software, start it up, do their programming, and
+> just exit when finished. The platform comes pre-installed with many
+> popular applications like Node.js, PHP, Apache, Composer, and
+> MariaDB/MySQL.
 ```
 d:\laragon\www> git clone https://github.com/joseburgon/JobsityChallenge.git
 ```
@@ -50,6 +56,7 @@ I already created the migrations with the test data.
 ```
 d:\...\> php artisan migrate --seed
 ```
+> It is possible that the Faker image provider is down. I switched to another provider in my local env.
 
 # Ready to go!
 
@@ -58,4 +65,3 @@ d:\...\> php artisan migrate --seed
 *Email: user.test.12@mail.com
 Password: 123456*
 
-> It is possible that the Faker image provider is down. I switched to another provider in my local env.
